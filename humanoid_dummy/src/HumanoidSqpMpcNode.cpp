@@ -63,6 +63,11 @@ int main(int argc, char** argv) {
       std::make_shared<GaitReceiver>(nodeHandle, interface.getSwitchedModelReferenceManagerPtr()->getGaitSchedule(), robotName);
 
   // ROS ReferenceManager
+    /**
+   * Subscribers to "topicPrefix_mode_schedule" and "topicPrefix_mpc_target" topics to receive respectively:
+   * (1) ModeSchedule : The predefined mode schedule for time-triggered hybrid systems.
+   * (2) TargetTrajectories : The commanded TargetTrajectories.
+   */
   auto rosReferenceManagerPtr = std::make_shared<RosReferenceManager>(robotName, interface.getReferenceManagerPtr());
   rosReferenceManagerPtr->subscribe(nodeHandle);
 
