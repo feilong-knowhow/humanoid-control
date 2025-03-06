@@ -105,10 +105,10 @@ ModeSchedule GaitSchedule::getModeSchedule(scalar_t lowerBoundTime, scalar_t upp
 /******************************************************************************************************/
 /******************************************************************************************************/
 void GaitSchedule::tileModeSequenceTemplate(scalar_t startTime, scalar_t finalTime) {
-  auto& eventTimes = modeSchedule_.eventTimes;
+  auto& eventTimes = modeSchedule_.eventTimes; // eventTimes and modeSequence control the to be executed actual mode at givn eventtime
   auto& modeSequence = modeSchedule_.modeSequence;
   const auto& templateTimes = modeSequenceTemplate_.switchingTimes;
-  const auto& templateModeSequence = modeSequenceTemplate_.modeSequence;
+  const auto& templateModeSequence = modeSequenceTemplate_.modeSequence; // temolateTimes and templatModeSequence are used to tell eventtime and modesequence what comes next
   const size_t numTemplateSubsystems = modeSequenceTemplate_.modeSequence.size();
 
   // If no template subsystem is defined, the last subsystem should continue for ever
