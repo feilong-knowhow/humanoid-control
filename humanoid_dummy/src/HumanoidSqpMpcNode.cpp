@@ -62,7 +62,7 @@ int main(int argc, char** argv) {
   auto gaitReceiverPtr =
       std::make_shared<GaitReceiver>(nodeHandle, interface.getSwitchedModelReferenceManagerPtr()->getGaitSchedule(), robotName);
 
-  // ROS ReferenceManager: ros_msg_conversions::readModeScheduleMsg(*msg)
+  // ROS ReferenceManager: ros_msg_conversions::readModeScheduleMsg(*msg) & readTargetTrajectoriesMsg(*msg);
     /**
    * Subscribers to "topicPrefix_mode_schedule" and "topicPrefix_mpc_target" topics to receive respectively:
    * (1) ModeSchedule : The predefined mode schedule for time-triggered hybrid systems.
