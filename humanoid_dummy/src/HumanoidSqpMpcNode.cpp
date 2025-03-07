@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
     }
   }
 
-  // Launch MPC ROS node
+  // Launch MPC ROS node : about the communication between MPC and MRT
  /**
    * This is the main routine which launches all the nodes required for MPC to run which includes:
    * (1) The MPC policy publisher (either feedback or feedforward policy).
