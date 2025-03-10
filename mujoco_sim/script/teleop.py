@@ -48,6 +48,7 @@ class KeyboardController:
         self.twist_msg.angular.z = 0.0
 
 def ros_publish():
+    # subscribed by cmdVelSub_ = nh.subscribe<geometry_msgs::Twist>("/cmd_vel", 1, cmdVelCallback) in TargetTrajectoriesPublisher.cpp
     while not rospy.is_shutdown():
         controller.publisher.publish(controller.twist_msg)
         controller.rate.sleep()
